@@ -1,11 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, { Component } from 'react';
+import ReactDom from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import '../css/app.css';
 import Home from './components/Home';
     
 
-if (document.getElementById('root')) {
-    ReactDOM.render(<Router><Home /></Router>, document.getElementById('root'));
+
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <Home/>
+            </BrowserRouter>
+        )
+    }
 }
-// ReactDOM.render(<Router><Home /></Router>, document.getElementById('root'));
+
+ReactDom.render(<App />, document.getElementById('root'));
